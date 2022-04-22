@@ -1,5 +1,5 @@
 import assert from 'assert'
-import { matches } from '../regex.js'
+import { matches } from '../regexes.js'
 
 const FIXTURE = {
   canadianPostalCode: {
