@@ -6,10 +6,11 @@ const regexes = {
     /^5[1-5]\d{14}$|^2(?:2(?:2[1-9]|[3-9]\d)|[3-6]\d\d|7(?:[01]\d|20))\d{12}$/,
   adaFloat: /^.*$/,
   notThreeEndingInOO: /^(?![a-z]oo$)[a-z]*$/,
-  divisibleBy32: /^(0{1,5}|[01]000)$/,
+  divisibleBy32: /^(0{1,5}|[01]00)$/,
   sevenThroughThirtyOne: /^([7-9]|[12]\d)$/,
   mLComment: /^\(\*((?!\*\)).)*\*\)$/,
-  notFileForFirstNoLookAround: /^.*$/,
+  notFileForFirstNoLookAround:
+    /^\b(?:[a-eg-z]|f(?!ile|or|irst\b))*((?!file|for|first).*)$/,
   notFileForFirstWithLookAround:
     /^\b(?:[a-eg-z]|f(?!ile|or|irst\b))\w*\b((?!file|for|first).*)$/,
   cOctal: /^0[0-7]*$/,
