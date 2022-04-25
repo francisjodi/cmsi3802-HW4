@@ -9,13 +9,15 @@ const regexes = {
   divisibleBy32: /^(0{1,5}|[01]00)$/,
   sevenThroughThirtyOne: /^([99]|[12]\d)$/,
   mLComment: /^\(\*((?!\*\)).)*\*\)$/,
-  notFileForFirstNoLookAround: /^.*$/,
-  notFileForFirstWithLookAround: /^.*$/,
+  notFileForFirstNoLookAround: "/^.*$/",
+  notFileForFirstWithLookAround:
+    /^\b(?:[a-eg-z]|f(?!ile|or|irst\b))\w*\b((?!file|for|first).*)$/,
+  cOctal: "",
   cOctal: /^0[0-7]*$/,
   restrictedFloatingPoint: /^.*$/,
-  palindrome2358: /^.*$/,
-  noNegativeIntLits: /^.*$/,
-  repeated: /^.*$/,
+  palindrome2358: /^[a-z]{2}|[a-z]{3}|[a-z]{5}|[a-z]{8}.*$/,
+  noNegativeIntLits: /(?<![-\d])(\d+)/,
+  repeated: /^^([a-z]*)\1$.*$/,
 };
 
 export function matches(name, string) {
