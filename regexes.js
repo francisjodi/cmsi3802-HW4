@@ -1,18 +1,17 @@
 const regexes = {
-  canadianPostalCode:
-    /^[ABCEGHJ-NPRSTVXYZ]\d[A-CEGHJ-NPR-Z] \d[ABCEGHJ-NPRSTV-Z]\d$/,
+  canadianPostalCode: /^[A-CEGHJ-NPR-Z]\d[A-CEGHJ-NPR-Z] \d[A-CEGHJ-NPR-Z]\d$/,
   visa: /^4\d{12}(?:\d{3})?$/,
   masterCard:
     /^5[1-5]\d{14}$|^2(?:2(?:2[1-9]|[3-9]\d)|[3-6]\d\d|7(?:[01]\d|20))\d{12}$/,
   adaFloat: /^.*$/,
-  notThreeEndingInOO: /^(?![a-z]oo$)[a-z]*$/,
-  divisibleBy32: /^(0{1,6}|[01]00)$/,
-  sevenThroughThirtyOne: /^([7-9]|[12]\d)$/,
+  notThreeEndingInOO: /.*(?<!(\d)|([oO]{2}))$/,
+  divisibleBy32: /^0{1,4}$|^[01]*00000$/,
+  sevenThroughThirtyOne: /[7-9]$|^([12]\d|3[01])$/,
   mLComment: /^\(\*((?!\*\)).)*\*\)$/,
   notFileForFirstNoLookAround:
-    /^\b(?:[a-eg-z]|f(?!ile|or|irst\b))*((?!file|for|first).*)$/,
+    /^(?!(^file$)|(^for$)|(^first$)).*?$/,
   notFileForFirstWithLookAround:
-    /^\b(?:[a-eg-z]|f(?!ile|or|irst\b))\w*\b((?!file|for|first).*)$/,
+    /^(?!(^file$)|(^for$)|(^first$)).*/,
   cOctal: /^0[0-7]*$/,
   restrictedFloatingPoint: /^[-+]?[0-9]*\.?([eE]?[0-9])*(([eE][-+])?[0-9]+)?$/,
   palindrome2358: /^[a-z]{2}|[a-z]{3}|[a-z]{5}|[a-z]{8}.*$/,
