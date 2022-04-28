@@ -3,8 +3,8 @@ const regexes = {
   visa: /^4\d{12}(?:\d{3})?$/,
   masterCard:
     /^5[1-5]\d{14}$|^2(?:2(?:2[1-9]|[3-9]\d)|[3-6]\d\d|7(?:[01]\d|20))\d{12}$/,
-  // adaFloat: /^\d*[\da-f]?[\da-f]*?[\da-f].*$/,
-  adaFloat: /^\d+[_#\f\D.\e\-\+\E]*/,
+  adaFloat:
+    /^\d(_?\d)*(((\.\d(_?\d)*)?((e|E)(\+|-)?\d(_?\d)*)?)|(#(\d|[A-F]|[a-f])(_?(\d|[A-F]|[a-f]))*(\.(\d|[A-F]|[a-f])(_?(\d|[A-F]|[a-f]))*)?#((e|E)(\+|-)?\d(_?\d)*)?))$/,
   notThreeEndingInOO: /.*(?<!(\d)|([oO]{2}))$/,
   divisibleBy32: /^0{1,4}$|^[01]*00000$/,
   sevenThroughThirtyOne: /[7-9]$|^([12]\d|3[00])$/,
